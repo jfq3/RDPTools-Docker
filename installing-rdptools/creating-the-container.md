@@ -1,70 +1,79 @@
 # Creating the Container
 
-Start Docker, open a terminal and enter:  
+Start the Docker engine by clicking on its icon. Once it is running, open a terminal and enter:  
 
 ```
 docker pull rdpstaff/rdp_tools
 ```
 
-Once download the docker rdp_tools image, the image will display on the docker desktop
+After the rdp_tools image is downloaded it will display on the Docker desktop. To check that it is downloaded, you can enter:  
 
-Check if the image is download, run:
-
+```
 docker images
-It will display all docker images
+```
+This command will dispaly all docker images locally available.  
 
-3. Create a container from the downloaded rdp_tools image with mapped local directory:
-This step is to create a container and able to store all the data generated from the image to the local machine. So once the docker image is updated, you will not lose your data.
+When you create a container from the Docker image, you need to map it to a directory on your computer, *i.e.* outside of the container. This makes the results accessable to other programs. Also, in the event you update RDPTools, any previous results will not be lost.  
 
-Command Structure (Do NOT run below command without modification):
+Begin by creating or choosing a local directory. In the example command below, this is D:/RDPtools_data. Then enter the following command in the terminal, changing the name of the local directory as necessary:   
 
-docker run --name <container_name> -it -v {local directory path of your computer}:{rdp_tools directory path} rdpstaff/rdp_tools
-Explanation of above commands:
+```
+docker run --name rdp_tools -it -v D:/RDPTools_data:/home/RDPuser rdpstaff/rdp_tools
+```
+After you enter the above command with the proper directory mapped, you will see something similar to ```RDPuser@216930f78851:~$``` as he prompt in the terminal. This indicates that you have logged into the container.  
 
-The syntax inside < > is the name of container
-The syntax inside { } is the directory path you want to map.
-In the first { }, you should put your local machine directory where you want to save data to.
-The second { } is the path of the directory in your docker container.
-rdpstaff/rdp_tools is the name of the image.
-The rest of commands such as --name, --it, -v are buit-in commands from docker, which should not be changed
-Example:
+## Optional
+To check that the directories are properly mapped, enter the following in the terminal:  
 
-docker run --name rdp_tools -it -v C:/Users/mycomputer/docker_data:/home/RDPuser rdpstaff/rdp_tools
-In the above example: the local directory C:/Users/mycomputer/docker_data is mapped with docker entire user directory /home/RDPuser. the above directory path is suggested but is up to your preference.
+```
+touch test
+```
+Open the local directory, for example with File Explorer. It should contain an empty file named test.  
 
-Once you enter the above command with proper directory mapped, You will see something similar to RDPuser@33306a31b588:/
-This indicates that you have logged in to the container
+To test in the opposite directon, paste a small text file, *e.g.* one named report.txt, into the local directory. Back in the terminal, enter:
 
-Check if the directory is properly mapped(Optional):
+```
+ls
+```
 
-Open the local folder that you mapped: C:/Users/mycomputer/docker_data (example)
-Open the directory yo mapped in docker: /home/RDPuser (example)
-Create a folder in docker mapped director: mkdir test
-Go back to the local folder and check if the test folder exists
-4. Login to the container
-This step shows how to login to the container, assuming you named container rdp_tools
+This should list the name of the file you just pasted into the local directory. You may read the contents of the text file with:
 
-First-time login:
-Switch to root user:
+```
+less report.txt
+```
+
+(Assuming that report.txt is the file name.)
+
+## Install Third Party Programs
+
+RDPTools depends on several third party programs that, because of licensing restrictions, we are not allowed to include in the RDPTools image. You need to install these using the script that we do provide. You need to do this only once.  
+
+In the terminal, change to root user by entering:  
+
+```
 sudo su -
-In prompt, enter password (ignore if no prompt), which is the same as the username
-RDPuser
-Then download all the third party necessary::
-/downloads/download_tools.py
-Once completed, switch user back to default RPDuser
-sudo su - RDPuser
-In prompt, enter password (ignore if no prompt), which is the same as the username
-RDPuser
-Second-time login:
-This step is for users who have exited the image and want to re-login and continue to use the docker container.
+```
 
-Run
-docker container ls -l
-This command will display all the docker containers.
-Start the container:
+If you are prompted for a password, enter RDPuser. Then enter:  
+
+```
+/downloads/download_tools.py
+```
+
+Log out, exit the container and close the terminal by entering:  
+
+```
+exit
+exit
+exit
+```
+## Subsequent logins
+
+To use RDPTools, with the Docker engine running, open a terminal and enter:  
+
+```
 docker start rdp_tools
-This command will start the container. The rdp_tools is the name of the container, in case you have a different name, change it, accordingly.
-Then run:
-docker attach rdp_tools 
-You will see something similar to RDPuser@33306a31b588:/ This indicates that you have logged in to the container
-5. Use rdp_tools from the command line.
+docker attach rdp_tools
+```
+
+You should then see a prompt similar to``` RDPuser@216930f78851:~$``` in the terminal and may begin using RDP_Tools. See https://john-quensen.com/workshops/workshop-2/ for tutorials on its use.  
