@@ -10,4 +10,4 @@
   * [Locally Using Docker Commands](installing-rdptools/creating-the-container.md)
   * [On a Cluster Using Singularity](installing-rdptools/placeholder.md)
 * [Install Auxillary Programs and Files](installing-rdptools/third-party-tools.md)
-* [Using RDPTools-Docker](installng-rdptools/using-rdptools.md)
+* [Using RDPTools-Docker](installing-rdptools/using-rdptools.md)
