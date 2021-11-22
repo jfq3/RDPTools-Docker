@@ -44,36 +44,5 @@ less report.txt
 
 (Assuming that report.txt is the file name.)
 
-## Install Third Party Programs
-
-RDPTools depends on several third party programs that, because of licensing restrictions, we are not allowed to include in the RDPTools image. You need to install these using the script that we do provide. You need to do this only once.  
-
-In the terminal, change to root user by entering:  
 
 ```
-sudo su -
-```
-
-If you are prompted for a password, enter RDPuser. Then enter:  
-
-```
-/downloads/download_tools.py
-```
-
-Log out, exit the container and close the terminal by entering:  
-
-```
-exit
-exit
-exit
-```
-## Subsequent logins
-
-To use RDPTools, with the Docker engine running, open a terminal and enter:  
-
-```
-docker start rdp_tools
-docker attach rdp_tools
-```
-
-You should then see a prompt similar to``` RDPuser@216930f78851:~$``` in the terminal and may begin using RDP_Tools. See https://john-quensen.com/workshops/workshop-2/ for tutorials on its use.  

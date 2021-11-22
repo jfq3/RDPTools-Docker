@@ -9,5 +9,5 @@
 * [Creating the Container](installing-rdptools/README.md)
   * [Locally Using Docker Commands](installing-rdptools/creating-the-container.md)
   * [On a Cluster Using Singularity](installing-rdptools/placeholder.md)
-* [Install Auxillary Programs and Files](run-script.md)
+* [Install Auxillary Programs and Files](installing-rdptools/third-party-tools.md)
 * [Using RDPTools-Docker](using-rdptoos/using-rdptools.md)
