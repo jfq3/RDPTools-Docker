@@ -26,15 +26,9 @@ Download the stable version of Docker for Windows from [https://hub.docker.com/e
 
 ### Configuring Docker Desktop
 
-Docker Desktop consumes a significant amount of computer resources, so you likely do not want it to start up each time you boot your computer. To prevent this from happening, type "startup" in the Windows search area in the lower left of your screen and open **Startup Apps**. Turn off Docker Desktop. Close the app window.
+Start Docker. Click on the gear icon in the menu bar (upper right). Click on the General tab. To prevent Docker from starting automaticallly when you boot your computer, make sure the "Start Docker Desktop when you log in" is unchecked. If you have WSL 2 installed, check the box "Use the WSL 2 based engine." For convenience, make sure the box for "Open Doceker Dashboard at startup"is checked. Click **Apply & Restart**.  
 
-Create a folder for storing your MiGA-Web results. This does not have to be on your C drive. MiGA-Web will run somewhat faster if it is on a solid state drive.
+Create a folder for storing your RDPTools results. This does not have to be on your C drive. 
 
-Start Docker Desktop. As it starts, the whale icon will appear among the hidden icons revealed by clicking on the **show hidden icons** tab in the lower right of your screen. The whale will spout while Docker is starting, which takes a minute or two. Once Docker is running, the spouting will stop and a message that Docker is running should appear next to the icon.
-
-By default, Docker is set to use 2 CPUs and 2 GB of memory. You may view these settings by right clicking on the whale in the hidden icon box, and clicking on **Settings** and then **Resources** in the menus that open. It is not necessary to increase these settings to install and run MiGA-Web, and in fact requesting too many CPUs will adversely affect performance and make the system unstable.
-
-You do, however, need to enable **FILE SHARING**, so left click on that text. Click on the **blue plus sign** inside the circle next to the grayed out line **C:\path\to\export\directory**, browse to the folder you created to hold your MiGA-Web results, and select the folder. Close the settings window and click on **Apply & Restart**.
-
-You are now ready to install MiGA.
+You are now ready to install RDPTools.
 
