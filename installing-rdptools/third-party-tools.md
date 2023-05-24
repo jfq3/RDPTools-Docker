@@ -11,7 +11,10 @@ sudo su -
 If you are prompted for a password, enter RDPuser. Then enter:  
 
 ```
-/downloads/download_tools.py
+wget https://github.com/jfq3/RDPTools-Docker/raw/main/downloads/download_tools_jq.py
+chmod 750 download_tools_jq.py
+mv download_tools_jq.py /downloads
+/downloads/download_tools_jq.py
 ```
 
 Log out, exit the container and close the terminal by entering:  
