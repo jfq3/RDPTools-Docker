@@ -15,7 +15,7 @@ This command will dispaly all docker images locally available.
 
 When you create a container from the Docker image, you need to map it to a directory on your computer, *i.e.* outside of the container. This makes the results accessable to other programs. Also, in the event you update RDPTools, any previous results will not be lost.  
 
-Begin by creating or choosing a local directory. In the example command below, this is D:/RDPtools_data. Then enter the following command in the terminal, changing the name of the local directory as necessary:   
+Begin by creating or choosing a local directory. In the example command below, this is D:/RDPtools_data. Then enter the following command in the terminal, changing the name of the local directory and its path as necessary:   
 
 ```
 docker run --name rdp_tools -it -v D:/RDPTools_data:/home/RDPuser rdpstaff/rdp_tools
