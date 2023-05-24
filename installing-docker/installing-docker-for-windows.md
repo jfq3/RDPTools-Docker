@@ -28,7 +28,5 @@ Download the stable version of Docker for Windows from [https://hub.docker.com/e
 
 Start Docker. Click on the gear icon in the menu bar (upper right). Click on the General tab. To prevent Docker from starting automaticallly when you boot your computer, make sure the "Start Docker Desktop when you log in" is unchecked. If you have WSL 2 installed, check the box "Use the WSL 2 based engine." For convenience, make sure the box for "Open Doceker Dashboard at startup"is checked. Click **Apply & Restart**.  
 
-Create a folder for storing your RDPTools results. This does not have to be on your C drive. 
-
 You are now ready to install RDPTools.
 
