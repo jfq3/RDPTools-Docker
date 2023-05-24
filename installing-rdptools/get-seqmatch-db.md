@@ -45,7 +45,7 @@ usage: seqmatch <refseqs | trainee_file_or_dir> <query_file>
 ```
 
 
-To classify sequences in a fasta file with the type strains database, use the command:  
+To classify sequences in a fasta file with the type strains database, use a command of the form (edit paths as necessary):  
 
 ```{text}
 java -jar /usr/local/RDPTools/SequenceMatch.jar seqmatch \
@@ -57,7 +57,7 @@ query.fasta \
 --outFile query_classified.tsv
 ```
 
-To classify sequences in a fasta file with the isolates database, use the command:  
+To classify sequences in a fasta file with the isolates database, use a command of the form (edit paths as necessary):  
 
 ```{text}
 java -jar /usr/local/RDPTools/SequenceMatch.jar seqmatch \
