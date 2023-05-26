@@ -13,4 +13,3 @@
 * [Install Auxillary Programs and Files](installing-rdptools/third-party-tools.md)
 * [Adding SeqMatch Databases](installing-rdptools/get-seqmatch-db.md)
 * [Using RDPTools-Docker](installing-rdptools/using-rdptools.md)
-* [Adding SeqMatch Databases](installing-rdptools/get-seqmatch-db.md)
