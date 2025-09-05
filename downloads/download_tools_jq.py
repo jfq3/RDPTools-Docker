@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import wget
 import os
 
 #download hmmer
@@ -55,7 +54,7 @@ os.system("sudo apt-get install libltdl-dev -y")
 os.system("sudo apt-get install libbz2-dev -y")
 os.chdir("/usr/local/")
 # os.system("sudo wget http://rdp.cme.msu.edu/download/RDP_Assembler.tgz"
-os.system("sudo wget "https://github.com/jfq3/RDPTools-Docker/raw/main/downloads/RDP_Assembler.tgz"
+os.system("sudo wget https://github.com/jfq3/RDPTools-Docker/raw/main/downloads/RDP_Assembler.tgz")
 os.system("sudo tar xzf RDP_Assembler.tgz")
 os.system("sudo rm RDP_Assembler.tgz")
 os.chdir("/usr/local/RDP_Assembler/pandaseq/")
